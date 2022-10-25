@@ -2,8 +2,9 @@
 @use '../../../../assets/styles/queries';
 
 .header {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 1em;
     justify-content: center;
     align-items: center;
     padding: 1em;
@@ -24,6 +25,7 @@
 
 @include queries.screen(lg) {
     .header {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
 
