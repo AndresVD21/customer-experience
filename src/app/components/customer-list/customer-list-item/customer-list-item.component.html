@@ -4,5 +4,5 @@
         <p>{{customer.email}}</p>
         <p>{{customer.phone}}</p>
     </div>
-    <span class="status">{{customer.status}}</span>
+    <span class="status"><status-pill [status]="customer.status"></status-pill></span>
 </div>
