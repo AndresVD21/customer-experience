@@ -1,14 +1,14 @@
 export class Customer {
     id: string;
-    firsName: string;
+    firstName: string;
     lastName: string;
-    status: 'active' | 'pending' | 'inactive';
+    status: string |'active' | 'pending' | 'inactive';
     email: string;
     phone?: string;
 
-    constructor(id: string, firstName: string, lastName: string, status: ('active' | 'pending' | 'inactive'), email: string, phone?: string) {
+    constructor(id: string, firstName: string, lastName: string, status: (string |'active' | 'pending' | 'inactive'), email: string, phone?: string) {
         this.id = id;
-        this.firsName = firstName;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.status = status;
         this.email = email;
