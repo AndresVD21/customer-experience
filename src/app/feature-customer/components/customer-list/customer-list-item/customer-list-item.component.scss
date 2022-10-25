@@ -1,0 +1,26 @@
+@use '../../../../../assets/styles/variables';
+@use '../../../../../assets/styles/queries';
+
+.item-container {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    background-color: variables.$blue;
+    color: variables.$white;
+    border-radius: 10px;
+    transition: transform .2s;
+
+    
+}
+
+@include queries.screen(lg) {
+    .item-container{
+        &:hover, &:focus {
+            transform: scale(1.1);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+}

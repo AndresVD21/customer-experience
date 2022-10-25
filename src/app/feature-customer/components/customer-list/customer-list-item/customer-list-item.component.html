@@ -1,0 +1,8 @@
+<div class="item-container" tabindex="0" (click)="goToDetails()">
+    <div class="item-details">
+        <p>{{customer.firsName}} {{customer.lastName}}</p>
+        <p>{{customer.email}}</p>
+        <p>{{customer.phone}}</p>
+    </div>
+    <span class="status"><status-pill [status]="customer.status"></status-pill></span>
+</div>
