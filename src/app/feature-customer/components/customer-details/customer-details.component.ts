@@ -59,9 +59,10 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy {
 
   setCustomer() {
     this.customer$ = this.store
-      .pipe(select(selectCustomer))
-      .pipe(takeUntil(this.destroy$));
-    this.customer$.subscribe((data) => {
+      .pipe(select(selectCustomer));
+    this.customer$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data) => {
       this.customer = data;
     });
   }

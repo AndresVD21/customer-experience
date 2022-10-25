@@ -8,6 +8,7 @@
         </div>
     </ng-container>
     <div class="customer-edit" *ngIf="editMode">
+        <h1>Editing Customer</h1>
         <form [formGroup]="customerForm" class="customer-form form" autocomplete="off">
             <div class="input-group">
                 <label class="input-label" for="firstName">First Name</label>
@@ -43,8 +44,6 @@
                 </div>
             </div>
         </form>
-        <pre>{{customerForm.pristine | json}}</pre>
-        <pre>{{customerForm.value | json}}</pre>
     </div>
     <div class="actions">
         <button class="btn btn-primary" *ngIf="!editMode" (click)="setEditMode()">Edit</button>
