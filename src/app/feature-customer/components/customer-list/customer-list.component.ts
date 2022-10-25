@@ -6,6 +6,7 @@ import { IAppState } from 'src/app/store/state/app.state';
 import { selectCustomers } from 'src/app/store/selectors/customer.selectors';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -20,7 +21,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   customers: Customer[];
   filterCustomers: Customer[];
 
-  constructor(private store: Store<IAppState>) { }
+  constructor(private store: Store<IAppState>, private router: Router) { }
 
   ngOnInit(): void {
     this.setCustomers();
@@ -39,12 +40,15 @@ export class CustomerListComponent implements OnInit, OnDestroy {
 
 
   filterCustomerList(filter: string) {
-    console.log(filter)
     if (filter.trim().length === 0) {
       this.filterCustomers = [...this.customers];
       return;
     }
     this.filterCustomers = this.customers.filter(customer => customer.lastName.toLowerCase().startsWith(filter))
+  }
+
+  addCustomer() {
+    this.router.navigate(['new']);
   }
 
   ngOnDestroy(): void {
