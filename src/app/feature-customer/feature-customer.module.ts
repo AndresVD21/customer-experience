@@ -5,6 +5,7 @@ import { CustomerListItemComponent } from './components/customer-list/customer-l
 import { SharedModule } from '../shared/shared.module';
 import { FeatureCustomerRoutingModule } from './feature-customer-routing.module';
 import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,9 @@ import { CustomerDetailsComponent } from './components/customer-details/customer
   imports: [
     CommonModule,
     FeatureCustomerRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FeatureCustomerModule { }
