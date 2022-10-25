@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StatusPillComponent implements OnInit {
 
-  @Input() status: 'active' | 'pending' | 'inactive';
+  @Input() status: string | 'active' | 'pending' | 'inactive';
 
   constructor() { }
 
