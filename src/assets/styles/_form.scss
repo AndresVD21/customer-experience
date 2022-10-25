@@ -1,0 +1,29 @@
+@use '../styles/variables';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 1em 0;
+
+        .input-label {
+            margin-bottom: 0.5em;
+        }
+
+        .input-control {
+            padding: 0.5em 1em;
+
+            &.ng-invalid.ng-touched.ng-dirty {
+                border-color: variables.$danger;
+                border: 2px solid variables.$danger;
+            }
+        }
+
+        .text-danger {
+            color: variables.$danger;
+        }
+    }
+}
