@@ -1,13 +1,19 @@
 .customers-filters {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1;
+    gap: 1em;
     padding: 2em;
 
-    .input-filter {
+    .input-filter, .select-sort {
         padding: 0.5em 1em;
-        width: 100%;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 1rem;
-        font-weight: 700;
+    }
+
+    .select-sort {
+        option {
+            text-transform: capitalize;
+        }
     }
 }

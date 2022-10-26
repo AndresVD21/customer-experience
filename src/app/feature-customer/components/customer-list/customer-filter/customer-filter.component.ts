@@ -14,7 +14,8 @@ export class CustomerFilterComponent implements OnInit, OnDestroy{
   filterSubject$ = new Subject<string>();
   @ViewChild('input', {static: true}) input: ElementRef;
 
-  @Output() filterText = new EventEmitter<string>()
+  @Output() filterText = new EventEmitter<string>();
+  @Output() sortSelectEmitter = new EventEmitter<string>();
 
   constructor() { }
 
@@ -36,6 +37,11 @@ export class CustomerFilterComponent implements OnInit, OnDestroy{
       ).subscribe(data => {
         this.filterText.emit(data);
       })
+  }
+
+  sortChange(e: any) {
+    const sortVariable = e.target.value;
+    this.sortSelectEmitter.emit(sortVariable);
   }
 
   ngOnDestroy(): void {
