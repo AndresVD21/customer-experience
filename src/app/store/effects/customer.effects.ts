@@ -44,5 +44,21 @@ export class CustomerEffects {
     )
   );
 
+  addCustomer$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromCustomer.AddCustomer),
+      map((action) => {
+        return action.customer;
+      }),
+      withLatestFrom(this.store.pipe(select(selectCustomers))),
+      switchMap(([customer, customers]) => {
+          const customersCopy = [...customers];
+          customersCopy.push(customer);
+          localStorage.setItem('customers', JSON.stringify(customersCopy));
+          return of(fromCustomer.SetCustomers({ customers: customersCopy }));
+      })
+    )
+  );
+
   constructor(private actions$: Actions, private store: Store<IAppState>) {}
 }

@@ -9,11 +9,5 @@ export const customerReducers = createReducer(
   }),
   on(CustomerActions.SetCustomer, (state, props) => {
     return { ...state, customerSelected: { ...props.customer } };
-  }),
-  on(CustomerActions.AddCustomer, (state, props) => {
-    return {
-      ...state,
-      customers: [...state.customers, props.customer],
-    };
   })
 );
