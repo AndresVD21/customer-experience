@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', loadChildren: () => import('./feature-customer/feature-customer.module').then(m => m.FeatureCustomerModule) }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

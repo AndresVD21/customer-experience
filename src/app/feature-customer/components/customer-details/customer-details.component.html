@@ -1,0 +1,63 @@
+<section class="customer-details-container">
+    <ng-container *ngIf="!editMode">
+        <h1 class="customer-name">{{ customer?.firstName }} {{ customer?.lastName }}</h1>
+        <status-pill [status]="customer?.status"></status-pill>
+        <div class="customer-details">
+            <p class="customer-email">{{customer?.email}}</p>
+            <p class="customer-phone">{{customer?.phone}}</p>
+        </div>
+    </ng-container>
+    <div class="customer-edit" *ngIf="editMode">
+        <h1>Editing Customer</h1>
+        <form [formGroup]="customerForm" class="customer-form form" autocomplete="off">
+            <div class="input-group">
+                <label class="input-label" for="firstName">First Name</label>
+                <input class="input-control" type="text" id="firstName" formControlName="firstName">
+                <div *ngIf="(customerForm.get('firstName').invalid && customerForm.get('firstName').touched) || customerForm.get('firstName').dirty">
+                    <small *ngIf="customerForm.get('firstName').errors?.required" class="text-danger">Firstname is required</small>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="input-label" for="lastName">Last Name</label>
+                <input class="input-control" type="text" id="lastName" formControlName="lastName">
+                <div *ngIf="(customerForm.get('lastName').invalid && customerForm.get('lastName').touched) || customerForm.get('lastName').dirty">
+                    <small *ngIf="customerForm.get('lastName').errors?.required" class="text-danger">Lastname is required</small>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="input-label" for="email">Email</label>
+                <input class="input-control" type="email" id="email" formControlName="email">
+                <div *ngIf="(customerForm.get('email').invalid && customerForm.get('email').touched) || customerForm.get('email').dirty">
+                    <small *ngIf="customerForm.get('email').errors?.pattern" class="text-danger">Please provide a valid email address</small>
+                    <small *ngIf="customerForm.get('email').errors?.required" class="text-danger">Email address is required</small>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="input-label" for="phone">Phone</label>
+                <input class="input-control" type="tel" id="phone" formControlName="phone">
+                <div *ngIf="(customerForm.get('phone').invalid && customerForm.get('phone').touched) || customerForm.get('phone').dirty">
+                    <small *ngIf="customerForm.get('phone').errors?.pattern" class="text-danger">Please provide a valid phone</small>
+                    <small *ngIf="customerForm.get('phone').errors?.required" class="text-danger">Email address is required</small>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="input-label" for="status">Status</label>
+                <select class="input-control" id="status" formControlName="status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="pending">Pending</option>
+                </select>
+                <div *ngIf="(customerForm.get('status').invalid && customerForm.get('status').touched) || customerForm.get('status').dirty">
+                    <small *ngIf="customerForm.get('status').errors?.required" class="text-danger">Status is required</small>
+                </div>
+            </div> 
+        </form>
+    </div>
+    <div class="actions">
+        <button class="btn btn-primary" *ngIf="!editMode" (click)="setEditMode()">Edit</button>
+        <ng-container *ngIf="editMode">
+            <button class="btn btn-success" [disabled]="customerForm.invalid || customerForm.pristine" (click)="saveData()">Save</button>
+            <button class="btn btn-danger" (click)="cancelEdit()">Cancel</button>
+        </ng-container>
+    </div>
+</section>

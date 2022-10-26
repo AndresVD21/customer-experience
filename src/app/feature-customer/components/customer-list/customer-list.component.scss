@@ -1,0 +1,31 @@
+@use '../../../../assets/styles/queries';
+
+.customer-list {
+    display: grid;
+    grid-template-columns: 1;
+    gap: 0.5em;
+    padding: 2em;
+}
+
+.customer-list-actions {
+    display: grid;
+    grid-template-columns: 1;
+    padding: 0 2em;
+}
+
+@include queries.screen(lg) {
+    .customer-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .customer-list-actions {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5em;
+
+        .btn-add-customer {
+            padding: 1em 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+}

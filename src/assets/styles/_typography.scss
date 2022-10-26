@@ -1,0 +1,17 @@
+@use './queries';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+@include queries.screen(lg) {
+    body {
+        // font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

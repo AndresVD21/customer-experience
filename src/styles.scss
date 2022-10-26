@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use './assets/styles/typography';
+@use './assets/styles/base';
+@use './assets/styles/button';
+@use './assets/styles/form';

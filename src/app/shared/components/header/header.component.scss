@@ -1,0 +1,40 @@
+@use '../../../../assets/styles/variables';
+@use '../../../../assets/styles/queries';
+
+.header {
+    display: grid;
+    grid-template-columns: 1;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: variables.$cyan;
+
+    .logo {
+        width: 200px;
+    }
+
+    .header-text {
+        font-size: 1.5rem;
+        margin: 0.5em 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+@include queries.screen(lg) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .logo {
+            width: 300px;
+        }
+
+        .header-text {
+            font-size: 2rem;
+        }
+    }
+}

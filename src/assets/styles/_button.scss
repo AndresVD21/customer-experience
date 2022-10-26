@@ -1,0 +1,42 @@
+@use './variables';
+
+.btn {
+    padding: 0.5em 1.5em;
+    color: variables.$white;
+    border-radius: 0.25rem;
+    border: 0;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: variables.$pending;
+    }
+
+    &:hover {
+        opacity: 0.9;
+
+        &:disabled {
+            opacity: 1;
+        }
+    }
+}
+
+.btn{
+    &-primary {
+        background-color: variables.$primary;
+        border-color: variables.$primary;
+    }
+    &-danger {
+        background-color: variables.$danger;
+        border-color: variables.$danger;
+
+    }
+    &-success {
+        background-color: variables.$success;
+        border-color: variables.$success;
+
+    }
+    &-cyan {
+        background-color: variables.$cyan;
+        border-color: variables.$cyan;
+    }
+}
