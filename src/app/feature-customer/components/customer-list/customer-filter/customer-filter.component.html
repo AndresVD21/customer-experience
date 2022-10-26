@@ -1,5 +1,5 @@
 <div class="customers-filters">
-    <input class="input-filter" type="text" name="filter" placeholder="Filter by Lastname" (input)="onFilterChange($event)">
+    <input class="input-filter" type="text" name="filter" placeholder="Filter by Lastname" (change)="onFilterChange($event)">
     <select class="select-sort" (change)="sortChange($event)">
         <option value="noSort">Select Sort Property</option>
         <option value="firstName">Firstname</option>
