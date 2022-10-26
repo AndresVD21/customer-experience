@@ -11,9 +11,7 @@
     background-color: variables.$blue;
     color: variables.$white;
     border-radius: 10px;
-    transition: transform .2s;
-
-    
+    transition: transform .2s; 
 }
 
 @include queries.screen(lg) {

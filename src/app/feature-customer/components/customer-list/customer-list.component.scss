@@ -23,7 +23,9 @@
         gap: 0.5em;
 
         .btn-add-customer {
-            grid-column-start: 3;
+            padding: 1em 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     }
 }
