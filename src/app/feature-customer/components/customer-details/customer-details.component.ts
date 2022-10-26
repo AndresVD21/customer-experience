@@ -99,13 +99,16 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy {
       const newId = uuid();
       const customer = new Customer(newId, firstName, lastName, status, email, phoneFormatted);
       this.store.dispatch(fromCustomer.AddCustomer({customer}));
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
       
     }
     this.customerForm.reset();
   }
 
   cancelEdit() {
+    if (this.isNewCustomer) {
+      this.router.navigate(['/']);
+    }
     this.editMode = false;
   }
 
