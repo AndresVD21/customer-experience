@@ -33,7 +33,7 @@ export class UsersService {
     return this.http.get<IUser[]>(`${environment.usersUrl}/users`)
       .pipe(map((users) => 
         users.map(user => 
-          new Customer(uuid(), user.firstName, user.lastName, this.getRandomStatus(), user.email, user.phone)
+          new Customer(uuid(), user.firstName, user.lastName, this.getRandomStatus(), user.email.toLocaleLowerCase(), user.phone)
         )
       ))
   }
