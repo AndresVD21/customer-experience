@@ -1,14 +1,46 @@
-# CustomerExperience
+# Customer Experience - Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+## About
+
+This project is the implementation of the Customer Experience where you can find the list of customers, edit them and add them.
+
+## Tech Stack 💻
+
+The tecnologies used for this project are the following
+
+- **Angular**: This framework was choosed based on the guidelines and the requirements.
+
+- **SCSS**: To handle the styles and the mantainability of them.
+
+- **Redux (NGRX)**: To implement the state management of the application and store the data.
+
+---
+
+## Development 👨🏽‍💻
+
+This project is separated in multiple parts:
+
+### Feature Customer
+
+The main module of the application where the business logic is implemented, everything is separated in various components and the models to represent the Customer are there also (feature-customer/models).
+
+### Services
+
+Here we have the service where we handle the request to get the users from an outside environment (mockapi.io).
+
+### Shared
+
+In this directory we can find components that are for common use.
+
+### Store
+
+Everything related to the state management is create here (actions/reduces/effects/selectors).
+
+---
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +54,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Improvement Areas
+
+| Area    | Improvement                                 |
+|---------| ------------------------------------------- |
+| Testing | Still need to improve in testing react components. Increase code coverage to make sure every component is redering properly.
