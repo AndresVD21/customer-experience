@@ -10,6 +10,14 @@
     &:disabled {
         background-color: variables.$pending;
     }
+
+    &:hover {
+        opacity: 0.9;
+
+        &:disabled {
+            opacity: 1;
+        }
+    }
 }
 
 .btn{
@@ -26,5 +34,9 @@
         background-color: variables.$success;
         border-color: variables.$success;
 
+    }
+    &-cyan {
+        background-color: variables.$cyan;
+        border-color: variables.$cyan;
     }
 }

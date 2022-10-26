@@ -2,7 +2,7 @@
     <app-customer-filter (filterText)="filterCustomerList($event)" (sortSelectEmitter)="sortListChange($event)"></app-customer-filter>
 </section>
 <div class="customer-list-actions">
-    <button class="btn-add-customer btn btn-primary" (click)="addCustomer()">Add Customer</button>
+    <button class="btn-add-customer btn btn-cyan" (click)="addCustomer()">Add Customer</button>
 </div>
 <section class="customer-list">
     <div class="customer-item" *ngFor="let customer of filterCustomers">
