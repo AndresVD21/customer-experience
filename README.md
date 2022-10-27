@@ -60,4 +60,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 | Area    | Improvement                                 |
 |---------| ------------------------------------------- |
-| Testing | Still need to improve in testing react components. Increase code coverage to make sure every component is redering properly.
+| Testing | Still need to improve in testing angular components. Increase code coverage to make sure every component is redering properly.
