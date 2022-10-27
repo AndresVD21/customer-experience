@@ -12,8 +12,6 @@ import * as fromCustomer from './store/actions/customer.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'customer-experience';
-
   customers: Customer[];
 
   constructor(private usersService: UsersService, private store: Store) {}
