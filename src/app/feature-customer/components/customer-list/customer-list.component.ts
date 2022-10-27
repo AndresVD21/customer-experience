@@ -50,12 +50,10 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   }
 
   sortListChange(sortValue: string) {
-    console.log(sortValue);
     this.sortListByProperty(sortValue);
   }
 
   sortListByProperty(property: string) {
-    console.log(property)
     switch (property) {
       case this.FIRSTNAME:
         this.filterCustomers = this.filterCustomers.sort((a, b) =>
